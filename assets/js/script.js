@@ -8,35 +8,36 @@ createApp({
                 {
                     name: 'Lewis',
                     lastname: 'Hamilton',
-                    team: 'Mercedes AMG'
+                    team: 'Mercedes AMG',
+                    image: 'hamilton.jpg'
                 },
                 {
                     name: 'Charles',
                     lastname: 'Leclerc',
-                    team: 'Ferrari'
+                    team: 'Ferrari',
+                    image: 'leclerc.jpg'
                 },
                 {
                     name: 'Lando',
                     lastname: 'Norris',
-                    team: 'McLaren'
+                    team: 'McLaren',
+                    image: 'norris.jpg'
                 },
                 {
                     name: 'George',
                     lastname: 'Russel',
-                    team: 'Mercedes AMG'
+                    team: 'Mercedes AMG',
+                    image: 'russel.jpg'
                 },
                 {
                     name: 'Max',
                     lastname: 'Verstappen',
-                    team: 'RedBull'
+                    team: 'RedBull',
+                    image: 'verstappen.jpg'
                 }
             ],
-
-            images: ['assets/img/hamilton.jpg', 'assets/img/leclerc.jpg', 'assets/img/norris.jpg', 'assets/img/russel.jpg', 'assets/img/verstappen.jpg'],
-            
             activeImage: 0,
-            pilot: '',
-            active: false
+            pilot: ''
         }
     }, // end data
 
@@ -44,8 +45,8 @@ createApp({
         nextPrev(booleanValor){
             !(booleanValor) ? this.activeImage++ : this.activeImage--;
 
-            if(this.activeImage === this.images.length) this.activeImage = 0;
-            else if(this.activeImage < 0) this.activeImage = this.images.length - 1;
+            if(this.activeImage === this.pilotInfo.length) this.activeImage = 0;
+            else if(this.activeImage < 0) this.activeImage = this.pilotInfo.length - 1;
         },
 
         autoCarousel(){
@@ -55,7 +56,7 @@ createApp({
         },
 
         stopIntervall(){
-            clearInterval(this.autoPlay)
+            clearInterval(this.autoPlay);
         }
     }, // end methods
 

@@ -31,13 +31,14 @@
                     <div @mouseover="stopIntervall()" @mouseleave="autoCarousel()" class="slider">
 
                         <div class="pilot-focus">
-                            <img :src="images[activeImage]">
+                            <img :src="'assets/img/' + pilotInfo[activeImage].image">
 
-                            <div v-for="index in pilotInfo" class="info-pilot">
+                            <div class="info-pilot">
                                 <h2>{{pilotInfo[activeImage].name}} {{pilotInfo[activeImage].lastname}}</h2>
                                 <p>{{pilotInfo[activeImage].team}}</p>
                             </div>
 
+                            <!-- btn -->
                             <div class="btn-arrow btn-left" @click="nextPrev(true)">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </div>
@@ -47,9 +48,9 @@
                         </div>
 
                         <div class="thumbnail d-flex">
-                            <div v-for="(image, index) in images" class="box-pilot">
-                                <img 
-                                    :src="image"
+                            <div v-for="(img, index) in pilotInfo" class="box-pilot">
+                                <img
+                                    :src="'assets/img/' + pilotInfo[index].image"
                                     class="pilot"
                                     :class="{'pilot-active': index === activeImage}"
                                     @click="activeImage = index"
