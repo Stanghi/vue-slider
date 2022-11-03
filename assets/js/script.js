@@ -33,8 +33,9 @@ createApp({
             ],
 
             images: ['assets/img/hamilton.jpg', 'assets/img/leclerc.jpg', 'assets/img/norris.jpg', 'assets/img/russel.jpg', 'assets/img/verstappen.jpg'],
-
-            activeImage: 0
+            
+            activeImage: 0,
+            pilot: ''
         }
     }, // end data
 
@@ -44,7 +45,7 @@ createApp({
 
         if(this.activeImage === this.images.length) this.activeImage = 0;
         else if(this.activeImage < 0) this.activeImage = this.images.length - 1;
-        }
+        },
     } // end methods
 
 }).mount('#app');

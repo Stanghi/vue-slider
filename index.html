@@ -31,11 +31,11 @@
 
                     <div class="slider">
                         <div class="pilot-focus">
-                            <img :src="images[activeImage]" alt="hamilton">
+                            <img :src="images[activeImage]">
 
-                            <div class="info-pilot">
-                                <h2 v-for="index in pilotInfo">{{index.name}} {{index.lastname}}</h2>
-                                <p v-for="index in pilotInfo">{{index.team}}</p>
+                            <div v-for="index in pilotInfo" class="info-pilot">
+                                <h2>{{pilotInfo[activeImage].name}} {{pilotInfo[activeImage].lastname}}</h2>
+                                <p>{{pilotInfo[activeImage].team}}</p>
                             </div>
 
                             <div class="btn-arrow btn-left" @click="nextPrev(false)">
@@ -53,7 +53,6 @@
                                     class="pilot"
                                     :class="{'pilot-active': index === activeImage}"
                                     @click="activeImage = index"
-                                    alt="{{index.lastname}}"
                                 >
                             </div>
                         </div>
