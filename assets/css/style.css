@@ -1,0 +1,140 @@
+/* ----------------GENERAL---------------- */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* outline: 2px solid red;*/
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ----------------UTILITY---------------- */
+.debug{
+    background-color: rgba(255, 0, 0, .25);
+    border: 1px solid black;
+}
+
+.d-flex{
+    display: flex;
+}
+
+/* ---------------COMPONENTS--------------- */
+.btn-arrow{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 50%;
+    opacity: .5;
+    color: white;
+    background-color: rgba(0, 0, 0, .25);
+}
+
+.btn-left{
+    top: 50%;
+    opacity: 1;
+}
+
+.btn-right{
+    top: 50%;
+    right: 0;
+    opacity: 1;
+}
+
+.btn-arrow:hover{
+    background-color: rgba(0, 0, 0);
+}
+
+/* -----------------HEADER----------------- */
+.navbar{
+    height: 70px;
+    width: 100%;
+    padding: 20px;
+    background-color: #e10600;
+}
+
+.navbar img{
+    height: 100%;
+    filter: contrast(0%) brightness(200%);
+}
+
+/* ------------------MAIN------------------ */
+.main-container{
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 70px);
+    background-color: #f7f4f1;
+}
+
+.slider{
+    width: 55%;
+    height: 80%;
+    overflow: hidden;
+    border-radius: 15px ;
+    background-color: black;
+}
+
+.pilot-focus{
+    height: 80%;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-pilot{
+    z-index: 999;
+    color: #f7f4f1;
+    position: absolute;
+    margin: 50px;
+}
+
+.info-pilot h2{
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.pilot-focus img{
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 0%;
+}
+
+.thumbnail{
+    position: relative;
+    height: calc(100% - 75%);
+}
+
+.box-pilot{
+    width: calc(100% / 5);
+    position: relative;
+    overflow: hidden;
+}
+
+.pilot{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    object-fit: cover;
+    object-position: 50% 0%;
+    cursor: pointer;
+}
+
+.pilot:hover{
+    scale: 1.1;
+    opacity: 1;
+}
+
+.pilot-active{
+    filter: brightness(150%);
+    opacity: 1;
+    scale: 1.1;
+}
