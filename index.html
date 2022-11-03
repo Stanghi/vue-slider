@@ -28,8 +28,8 @@
             <!-- MAIN -->
             <main>
                 <div class="main-container d-flex">
+                    <div @mouseover="stopIntervall()" @mouseleave="autoCarousel()" class="slider">
 
-                    <div class="slider">
                         <div class="pilot-focus">
                             <img :src="images[activeImage]">
 
@@ -38,10 +38,10 @@
                                 <p>{{pilotInfo[activeImage].team}}</p>
                             </div>
 
-                            <div class="btn-arrow btn-left" @click="nextPrev(false)">
+                            <div class="btn-arrow btn-left" @click="nextPrev(true)">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </div>
-                            <div class="btn-arrow btn-right" @click="nextPrev(true)">
+                            <div class="btn-arrow btn-right" @click="nextPrev(false)">
                                 <i class="fa-solid fa-chevron-right"></i>
                             </div>
                         </div>
@@ -56,12 +56,12 @@
                                 >
                             </div>
                         </div>
+                        
                     </div>
-                    
                 </div>
             </main>
 
-        </div>
+        </div> <!-- end app -->
 
         <script src="assets/js/script.js"></script>
     </body>

@@ -35,17 +35,32 @@ createApp({
             images: ['assets/img/hamilton.jpg', 'assets/img/leclerc.jpg', 'assets/img/norris.jpg', 'assets/img/russel.jpg', 'assets/img/verstappen.jpg'],
             
             activeImage: 0,
-            pilot: ''
+            pilot: '',
+            active: false
         }
     }, // end data
 
     methods: {
         nextPrev(booleanValor){
-            booleanValor ? this.activeImage++ : this.activeImage--;
+            !(booleanValor) ? this.activeImage++ : this.activeImage--;
 
-        if(this.activeImage === this.images.length) this.activeImage = 0;
-        else if(this.activeImage < 0) this.activeImage = this.images.length - 1;
+            if(this.activeImage === this.images.length) this.activeImage = 0;
+            else if(this.activeImage < 0) this.activeImage = this.images.length - 1;
         },
-    } // end methods
+
+        autoCarousel(){
+            this.autoPlay = setInterval(() => {
+                this.nextPrev();
+            }, 3000)
+        },
+
+        stopIntervall(){
+            clearInterval(this.autoPlay)
+        }
+    }, // end methods
+
+    mounted(){
+        this.autoCarousel();
+    } // end mounted
 
 }).mount('#app');
